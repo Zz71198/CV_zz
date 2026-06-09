@@ -1,108 +1,114 @@
-html
 <!doctype html>
 <html lang="es">
 <head>
+  <!-- Configuración básica del documento -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Título que aparece en la pestaña del navegador -->
   <title>Juan Diego Pérez Bohórquez | Ambiente, datos y software</title>
 
+  <!-- Descripción para buscadores y vista previa al compartir el enlace -->
   <meta name="description" content="Portafolio de Juan Diego Pérez Bohórquez: ciencias ambientales, gestión ambiental, sustancias químicas, datos y programación.">
   <meta name="author" content="Juan Diego Pérez Bohórquez">
 
+  <!-- Información para vista previa cuando comparto mi página -->
   <meta property="og:title" content="Juan Diego Pérez Bohórquez">
   <meta property="og:description" content="Ciencias Ambientales · Gestión ambiental · Datos · Programación">
   <meta property="og:type" content="website">
 
+  <!-- Aquí conecto mi archivo CSS principal -->
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 
 <body>
+  <!-- Este es el precargador inicial con saludos en varios idiomas -->
   <div id="cargador-inicio" class="cargador-inicio">
     <span id="palabra-inicio">Hola</span>
   </div>
 
+  <!-- Barra de navegación flotante superior -->
   <header class="encabezado">
-    <nav class="barra-navegacion">
-      <a class="marca" href="#inicio">
+    <nav class="barra-navegacion" aria-label="Navegación principal">
+      <!-- Marca personal del sitio -->
+      <a class="marca" href="#inicio" aria-label="Ir al inicio">
         <span>JDPB</span>
         <small>Juan Diego</small>
       </a>
 
+      <!-- Enlaces principales del portafolio -->
       <div class="enlaces-nav">
         <a href="#inicio">Inicio</a>
         <a href="#sobre-mi">Sobre mí</a>
+        <a href="#experiencia">Experiencia</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#publicaciones">Publicaciones</a>
         <a href="#blog">Blog</a>
-        <a href="assets/CV_Juan_Perez_Bohorquez.pdf" target="_blank" rel="noreferrer">CV</a>
+        <a href="#formacion">Formación</a>
         <a href="#contacto">Contacto</a>
+        <a href="assets/CV_Juan_Perez_Bohorquez.pdf" target="_blank" rel="noreferrer">CV</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section id="inicio" class="hero">
-      <div class="hero-fondo"></div>
+    <!-- Portada principal del sitio: esta es la primera pantalla después del precargador -->
+    <section id="inicio" class="portada">
+      <!-- Fondo decorativo de la portada -->
+      <div class="portada-fondo" aria-hidden="true"></div>
 
-      <div class="hero-contenido">
-        <p class="hero-etiqueta">Ciencias Ambientales · Datos · Software</p>
-
-        <h1>Construyo soluciones entre ambiente, química aplicada y programación.</h1>
-
-        <p class="hero-texto">
-          Soy Juan Diego Pérez Bohórquez. Integro gestión ambiental, sustancias químicas,
-          residuos peligrosos, análisis de datos y desarrollo de herramientas digitales
-          para resolver problemas técnicos con enfoque ambiental.
-        </p>
-
-        <div class="hero-botones">
-          <a class="boton boton-primario" href="assets/CV_Juan_Perez_Bohorquez.pdf" target="_blank" rel="noreferrer">
-            Ver CV
-          </a>
-          <a class="boton boton-secundario" href="#proyectos">
-            Ver proyectos
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-imagen">
+      <!-- Foto principal de la portada -->
+      <div class="portada-imagen">
         <img src="assets/foto-perfil.jpeg" alt="Foto de Juan Diego Pérez Bohórquez">
       </div>
 
-      <div class="hero-lateral">
+      <!-- Texto lateral corto, como en una portada editorial -->
+      <div class="portada-texto-lateral">
         <span>Perfil técnico ambiental</span>
-        <h2>Ambiente, datos y desarrollo aplicado</h2>
+        <h1>Ambiente, datos y desarrollo aplicado</h1>
       </div>
 
+      <!-- Botón principal de la portada -->
+      <a class="boton-cv-portada" href="assets/CV_Juan_Perez_Bohorquez.pdf" target="_blank" rel="noreferrer">
+        CV
+        <span aria-hidden="true">→</span>
+      </a>
+
+      <!-- Cinta grande con mi nombre atravesando la portada -->
       <div class="cinta-nombre" aria-hidden="true">
         <span>Juan Diego Pérez Bohórquez - Juan Diego Pérez Bohórquez - Juan Diego Pérez Bohórquez -</span>
       </div>
+
+      <!-- Flecha visual para sugerir que la página continúa hacia abajo -->
+      <a class="flecha-bajar" href="#sobre-mi" aria-label="Bajar a la sección Sobre mí">
+        ↓
+      </a>
     </section>
 
-    <section id="sobre-mi" class="seccion seccion-clara">
-      <div class="contenedor texto-presentacion">
+    <!-- Sección de presentación: aquí luego el JS hará el efecto de escritura -->
+    <section id="sobre-mi" class="seccion seccion-presentacion">
+      <div class="contenedor contenedor-presentacion">
         <p class="subtitulo-seccion">Sobre mí</p>
 
-        <p>
-          Soy estudiante de Ciencias Ambientales en la Universidad de Granada y estudiante
-          de Formación Profesional en Programación de Software. Mi trayectoria combina
-          formación previa en Química, experiencia en gestión ambiental universitaria y
-          aprendizaje continuo en ciencia de datos.
+        <!-- Este texto queda preparado para animarse con JavaScript cuando aparezca en pantalla -->
+        <p class="texto-escritura" data-escritura="true">
+          Soy estudiante de Ciencias Ambientales en la Universidad de Granada y estudiante de Programación de Software. Mi trayectoria combina formación previa en Química, experiencia en gestión ambiental universitaria y aprendizaje continuo en ciencia de datos.
         </p>
 
-        <p>
-          He trabajado en gestión de residuos peligrosos, sustancias químicas, bases de datos,
-          reportes, automatización con macros y consultas a APIs como PubChem para apoyar
-          procesos de clasificación e identificación química.
+        <!-- Este segundo párrafo también podrá escribirse de forma progresiva -->
+        <p class="texto-escritura" data-escritura="true">
+          He trabajado en gestión de residuos peligrosos, sustancias químicas, bases de datos, reportes, automatización con macros y consultas a APIs como PubChem para apoyar procesos de clasificación e identificación química.
         </p>
       </div>
     </section>
 
+    <!-- Sección de experiencia laboral y técnica -->
     <section id="experiencia" class="seccion">
       <div class="contenedor">
         <p class="subtitulo-seccion">Dónde he trabajado</p>
         <h2>Experiencia</h2>
 
+        <!-- Experiencia principal -->
         <article class="tarjeta-experiencia">
           <div class="experiencia-encabezado">
             <div>
@@ -120,6 +126,7 @@ html
           </p>
         </article>
 
+        <!-- Experiencia actual como tutor -->
         <article class="tarjeta-experiencia">
           <div class="experiencia-encabezado">
             <div>
@@ -135,6 +142,7 @@ html
           </p>
         </article>
 
+        <!-- Experiencia docente previa -->
         <article class="tarjeta-experiencia">
           <div class="experiencia-encabezado">
             <div>
@@ -152,12 +160,14 @@ html
       </div>
     </section>
 
+    <!-- Sección de proyectos -->
     <section id="proyectos" class="seccion seccion-clara">
       <div class="contenedor">
         <p class="subtitulo-seccion">Trabajo aplicado</p>
         <h2>Proyectos</h2>
 
         <div class="rejilla-proyectos">
+          <!-- Proyecto 1 -->
           <article class="tarjeta-proyecto">
             <h3>Clasificación de sustancias con PubChem</h3>
             <p>
@@ -167,6 +177,7 @@ html
             <span>Python · APIs · PubChem</span>
           </article>
 
+          <!-- Proyecto 2 -->
           <article class="tarjeta-proyecto">
             <h3>Automatización de reportes ambientales</h3>
             <p>
@@ -176,6 +187,7 @@ html
             <span>Excel · VBA · Bases de datos</span>
           </article>
 
+          <!-- Proyecto 3 -->
           <article class="tarjeta-proyecto">
             <h3>Gestión de residuos peligrosos</h3>
             <p>
@@ -188,6 +200,7 @@ html
       </div>
     </section>
 
+    <!-- Sección para publicaciones, documentos o producción técnica -->
     <section id="publicaciones" class="seccion">
       <div class="contenedor">
         <p class="subtitulo-seccion">Producción técnica</p>
@@ -201,6 +214,7 @@ html
       </div>
     </section>
 
+    <!-- Sección de blog o notas personales/profesionales -->
     <section id="blog" class="seccion seccion-clara">
       <div class="contenedor">
         <p class="subtitulo-seccion">Ideas y aprendizaje</p>
@@ -214,27 +228,32 @@ html
       </div>
     </section>
 
+    <!-- Sección de formación académica -->
     <section id="formacion" class="seccion">
       <div class="contenedor">
         <p class="subtitulo-seccion">Formación</p>
         <h2>Base académica</h2>
 
         <div class="rejilla-formacion">
+          <!-- Formación actual -->
           <article>
             <h3>Universidad de Granada</h3>
             <p>Grado en Ciencias Ambientales · En curso</p>
           </article>
 
+          <!-- Formación en programación -->
           <article>
             <h3>Programación de Software</h3>
             <p>Formación profesional · En curso</p>
           </article>
 
+          <!-- Formación previa en química -->
           <article>
             <h3>Universidad Nacional de Colombia</h3>
             <p>Estudios universitarios en Química · Formación parcial</p>
           </article>
 
+          <!-- Certificación en ciencia de datos -->
           <article>
             <h3>IBM / Coursera</h3>
             <p>Certificación Profesional en Ciencia de Datos · En curso</p>
@@ -243,6 +262,7 @@ html
       </div>
     </section>
 
+    <!-- Sección final de contacto -->
     <section id="contacto" class="seccion seccion-clara contacto">
       <div class="contenedor">
         <p class="subtitulo-seccion">Contacto</p>
@@ -253,6 +273,7 @@ html
           automatización y desarrollo de herramientas digitales aplicadas.
         </p>
 
+        <!-- Enlaces de contacto principales -->
         <div class="enlaces-contacto">
           <a href="mailto:juperezbo@unal.edu.co">juperezbo@unal.edu.co</a>
           <a href="tel:+34685841481">685 841 481</a>
@@ -263,11 +284,12 @@ html
     </section>
   </main>
 
+  <!-- Pie de página -->
   <footer class="pie">
     <p>© <span id="year"></span> Juan Diego Pérez Bohórquez. Sitio construido con HTML, CSS y GitHub Pages.</p>
   </footer>
 
+  <!-- Aquí conecto mi JavaScript principal -->
   <script src="assets/scripts.js"></script>
 </body>
 </html>
-
