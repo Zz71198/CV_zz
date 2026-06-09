@@ -300,44 +300,5 @@ h3 {
   .hero {
     min-height: auto;
     padding-top: 82px;
-  } 
-}
-
-.cargador-inicio {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 9999;
-  background: var(--bg);
-  color: var(--ink);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: clamp(3rem, 10vw, 8rem);
-  font-weight: 800;
-  letter-spacing: -0.06em;
-  transition: opacity 0.9s ease, visibility 0.9s ease;
-}
-
-.cargador-inicio span {
-  animation: aparecerPalabra 0.28s ease;
-}
-
-.cargador-inicio.ocultar-cargador {
-  opacity: 0;
-  visibility: hidden;
-}
-
-@keyframes aparecerPalabra {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
