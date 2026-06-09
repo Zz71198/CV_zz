@@ -1,40 +1,42 @@
 /* 
   Estilos generales de mi portafolio.
-  Aquí defino los colores principales para poder cambiar el diseño fácil después.
+  Aquí dejo las variables principales para controlar colores, sombras y superficies.
 */
 :root {
-  --fondo: #e6e6e2;
-  --fondo-claro: #f7f7f4;
-  --superficie: #ffffff;
+  --fondo-general: #e6e6e2;
+  --fondo-panel: #f8f8f5;
+  --fondo-panel-alterno: #ffffff;
   --texto: #151917;
   --texto-suave: #5f6662;
   --texto-blanco: #ffffff;
   --borde: rgba(21, 25, 23, 0.12);
+  --borde-claro: rgba(255, 255, 255, 0.42);
   --acento: #24584a;
   --acento-suave: #e4ede8;
   --sombra: 0 24px 70px rgba(21, 25, 23, 0.12);
+  --sombra-suave: 0 18px 48px rgba(21, 25, 23, 0.08);
 }
 
 /* 
-  Quito comportamientos raros del navegador y hago que las medidas sean más predecibles.
+  Hago que las medidas de todos los elementos sean más fáciles de controlar.
 */
 * {
   box-sizing: border-box;
 }
 
 /* 
-  Activo el desplazamiento suave cuando hago clic en los enlaces del menú.
+  Activo el desplazamiento suave cuando uso los enlaces del menú.
 */
 html {
   scroll-behavior: smooth;
 }
 
 /* 
-  Base general del cuerpo de la página.
+  Estilos generales del cuerpo de la página.
 */
 body {
   margin: 0;
-  background: var(--fondo);
+  background: var(--fondo-general);
   color: var(--texto);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.6;
@@ -42,7 +44,7 @@ body {
 }
 
 /* 
-  Hago que las imágenes se adapten bien al ancho disponible.
+  Hago que las imágenes no se desborden.
 */
 img {
   display: block;
@@ -50,7 +52,7 @@ img {
 }
 
 /* 
-  Dejo los enlaces limpios para controlar yo el estilo.
+  Dejo los enlaces limpios para darles estilo yo mismo.
 */
 a {
   color: inherit;
@@ -62,7 +64,8 @@ a:hover {
 }
 
 /* 
-  Este es el precargador que aparece al entrar a la página.
+  Este es el precargador inicial.
+  Se muestra antes de entrar al sitio.
 */
 .cargador-inicio {
   position: fixed;
@@ -71,7 +74,7 @@ a:hover {
   bottom: 0;
   left: 0;
   z-index: 9999;
-  background: var(--fondo);
+  background: var(--fondo-general);
   color: var(--texto);
   display: flex;
   align-items: center;
@@ -83,14 +86,14 @@ a:hover {
 }
 
 /* 
-  Animo cada palabra del precargador cuando cambia.
+  Animo cada saludo del precargador.
 */
 .cargador-inicio span {
   animation: aparecerPalabra 0.28s ease;
 }
 
 /* 
-  Esta clase la agregará JavaScript para ocultar el precargador.
+  Esta clase la agrega JavaScript cuando termina el precargador.
 */
 .cargador-inicio.ocultar-cargador {
   opacity: 0;
@@ -98,7 +101,7 @@ a:hover {
 }
 
 /* 
-  Animación sencilla para que las palabras del precargador entren suave.
+  Animación de entrada para las palabras del precargador.
 */
 @keyframes aparecerPalabra {
   from {
@@ -114,7 +117,7 @@ a:hover {
 
 /* 
   Barra superior flotante.
-  La dejo fija para que acompañe el recorrido del sitio.
+  La dejo fija para que acompañe el scroll.
 */
 .encabezado {
   position: fixed;
@@ -126,7 +129,8 @@ a:hover {
 }
 
 /* 
-  Esta es la barra tipo cápsula, transparente y elegante.
+  Barra tipo cápsula.
+  Uso transparencia suave para que se sienta como una barra de revista.
 */
 .barra-navegacion {
   max-width: 1380px;
@@ -136,7 +140,7 @@ a:hover {
   border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.72);
-  box-shadow: var(--sombra);
+  box-shadow: var(--sombra-suave);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -174,7 +178,7 @@ a:hover {
 }
 
 /* 
-  Enlaces del menú superior.
+  Contenedor de enlaces del menú.
 */
 .enlaces-nav {
   display: flex;
@@ -185,7 +189,7 @@ a:hover {
 }
 
 /* 
-  Estilo de cada enlace de navegación.
+  Estilo individual de los enlaces.
 */
 .enlaces-nav a {
   font-size: 0.9rem;
@@ -193,70 +197,121 @@ a:hover {
 }
 
 /* 
-  Portada principal.
-  Esta es la primera pantalla que se ve después del precargador.
+  La portada funciona como un bloque independiente.
+  No le pongo padding porque quiero que el panel cubra toda la pantalla.
 */
 .portada {
   position: relative;
   min-height: 100vh;
-  padding: 130px 40px 60px;
+  background: #9fa39e;
+}
+
+/* 
+  Este es el panel principal de la portada.
+  Ocupa toda la primera pantalla como una portada editorial.
+*/
+.panel-portada {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
   overflow: hidden;
-  background: linear-gradient(135deg, #bfc2bd 0%, #d9d9d4 42%, #aeb4ae 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: #9fa39e;
 }
 
 /* 
-  Fondo decorativo suave para darle profundidad a la portada.
+  Esta es la imagen de fondo de la portada.
+  La hago cubrir toda la pantalla.
 */
-.portada-fondo {
+.portada-imagen-fondo {
   position: absolute;
-  top: -18%;
-  right: -12%;
-  width: 58vw;
-  height: 58vw;
-  border-radius: 50%;
-  background: rgba(36, 88, 74, 0.12);
-  z-index: 0;
-}
-
-/* 
-  Contenedor de mi foto principal.
-  La foto es la protagonista de la portada.
-*/
-.portada-imagen {
-  position: absolute;
-  z-index: 2;
+  top: 0;
+  right: 0;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  height: 88vh;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  left: 0;
+  z-index: 1;
+  margin: 0;
 }
 
 /* 
-  Ajusto la foto para que se vea grande y limpia.
+  La foto cubre todo el panel.
+  object-fit: cover hace que llene la pantalla aunque tenga que recortar un poco.
 */
-.portada-imagen img {
+.portada-imagen-fondo img {
+  width: 100%;
   height: 100%;
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 34px 44px rgba(0, 0, 0, 0.18));
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* 
+  Capa suave encima de la imagen.
+  Me ayuda a leer mejor el texto blanco sobre la foto.
+*/
+.portada-capa {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(21, 25, 23, 0.20) 0%,
+      rgba(21, 25, 23, 0.08) 45%,
+      rgba(21, 25, 23, 0.28) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(21, 25, 23, 0.18) 0%,
+      rgba(21, 25, 23, 0.02) 45%,
+      rgba(21, 25, 23, 0.22) 100%
+    );
+}
+
+/* 
+  Marca visual pequeña dentro de la portada.
+  Es decorativa, distinta a la barra de navegación.
+*/
+.portada-marca-visual {
+  position: absolute;
+  top: 28px;
+  left: 42px;
+  z-index: 4;
+  display: grid;
+  line-height: 1;
+  color: var(--texto-blanco);
+}
+
+/* 
+  Siglas decorativas en la portada.
+*/
+.portada-marca-visual strong {
+  font-size: 1.45rem;
+  letter-spacing: 0.28em;
+}
+
+/* 
+  Texto pequeño debajo de la marca visual.
+*/
+.portada-marca-visual span {
+  margin-top: 8px;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
 }
 
 /* 
   Texto lateral de la portada.
-  Lo ubico a la derecha para que no compita con la foto.
+  Lo ubico a la derecha para lograr el estilo editorial.
 */
 .portada-texto-lateral {
   position: absolute;
-  z-index: 3;
+  z-index: 4;
   right: 8vw;
   top: 38%;
-  max-width: 340px;
+  max-width: 360px;
   color: var(--texto-blanco);
 }
 
@@ -270,11 +325,11 @@ a:hover {
   font-weight: 800;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.84);
 }
 
 /* 
-  Título corto de la portada.
+  Título corto lateral de la portada.
 */
 .portada-texto-lateral h1 {
   margin: 0;
@@ -284,7 +339,7 @@ a:hover {
 }
 
 /* 
-  Botón flotante para abrir mi CV desde la portada.
+  Botón flotante para abrir el CV.
 */
 .boton-cv-portada {
   position: absolute;
@@ -293,7 +348,7 @@ a:hover {
   bottom: 7vh;
   min-height: 52px;
   padding: 0 24px;
-  border: 1px solid rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.84);
   border-radius: 999px;
   color: var(--texto-blanco);
   display: inline-flex;
@@ -332,8 +387,8 @@ a:hover {
 }
 
 /* 
-  Texto de la cinta. 
-  Lo dejo animado para que se desplace lentamente.
+  Texto de la cinta.
+  Se mueve lentamente para dar sensación de portada viva.
 */
 .cinta-nombre span {
   display: inline-block;
@@ -347,7 +402,7 @@ a:hover {
 }
 
 /* 
-  Movimiento horizontal de la cinta del nombre.
+  Movimiento horizontal de la cinta.
 */
 @keyframes moverCinta {
   from {
@@ -360,18 +415,49 @@ a:hover {
 }
 
 /* 
-  Estilo general de las secciones después de la portada.
+  Cada sección después de la portada tiene su propio espacio.
+  Esto ayuda a que se vea como paneles editoriales.
 */
 .seccion {
-  padding: 112px 28px;
-  background: var(--fondo);
+  padding: 28px;
+  background: var(--fondo-general);
 }
 
 /* 
-  Variante clara para alternar fondos y separar secciones.
+  Alterno algunos fondos para separar visualmente los bloques.
 */
 .seccion-clara {
-  background: var(--fondo-claro);
+  background: var(--fondo-general);
+}
+
+/* 
+  Este es el panel interno de cada sección.
+  Lo uso para diferenciar las secciones de la portada.
+*/
+.panel-seccion {
+  width: 100%;
+  min-height: 72vh;
+  padding: 112px 28px;
+  border-radius: 42px;
+  background: var(--fondo-panel);
+  box-shadow: var(--sombra-suave);
+}
+
+/* 
+  Algunas secciones claras pueden verse un poco más limpias.
+*/
+.seccion-clara .panel-seccion {
+  background: var(--fondo-panel-alterno);
+}
+
+/* 
+  Panel especial de la presentación.
+  Lo hago más alto para que el texto tenga aire al aparecer.
+*/
+.panel-presentacion {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
 }
 
 /* 
@@ -383,17 +469,7 @@ a:hover {
 }
 
 /* 
-  Sección de presentación.
-  La dejo amplia y limpia para que el texto pueda aparecer con efecto de escritura.
-*/
-.seccion-presentacion {
-  min-height: 86vh;
-  display: flex;
-  align-items: center;
-}
-
-/* 
-  Contenedor especial de la presentación.
+  Contenedor más estrecho para la presentación.
 */
 .contenedor-presentacion {
   max-width: 980px;
@@ -412,7 +488,7 @@ a:hover {
 }
 
 /* 
-  Títulos grandes de secciones.
+  Títulos grandes de las secciones.
 */
 h2 {
   margin: 0 0 28px;
@@ -431,7 +507,7 @@ h3 {
 }
 
 /* 
-  Texto principal de la sección Sobre mí.
+  Texto principal de la presentación y textos amplios.
 */
 .texto-escritura,
 .texto-ancho {
@@ -443,7 +519,7 @@ h3 {
 }
 
 /* 
-  Clase que usará JavaScript cuando el texto se esté escribiendo.
+  Esta clase la usa JavaScript mientras se escribe el texto.
 */
 .texto-escritura.escribiendo::after {
   content: "|";
@@ -477,7 +553,7 @@ h3 {
   border: 1px solid var(--borde);
   border-radius: 28px;
   background: rgba(255, 255, 255, 0.76);
-  box-shadow: var(--sombra);
+  box-shadow: var(--sombra-suave);
 }
 
 /* 
@@ -493,7 +569,7 @@ h3 {
 }
 
 /* 
-  Texto secundario dentro de experiencia.
+  Texto secundario dentro de la experiencia.
 */
 .experiencia-encabezado p,
 .experiencia-encabezado span {
@@ -527,8 +603,8 @@ h3 {
   padding: 30px;
   border: 1px solid var(--borde);
   border-radius: 28px;
-  background: var(--superficie);
-  box-shadow: var(--sombra);
+  background: var(--fondo-panel-alterno);
+  box-shadow: var(--sombra-suave);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -566,7 +642,7 @@ h3 {
   padding: 26px;
   border: 1px solid var(--borde);
   border-radius: 24px;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.78);
 }
 
 /* 
@@ -588,13 +664,13 @@ h3 {
 }
 
 /* 
-  Cada enlace de contacto parece un botón pequeño.
+  Cada enlace de contacto funciona como botón pequeño.
 */
 .enlaces-contacto a {
   padding: 12px 18px;
   border: 1px solid var(--borde);
   border-radius: 999px;
-  background: var(--superficie);
+  background: var(--fondo-panel-alterno);
   color: var(--texto);
   font-weight: 700;
 }
@@ -604,7 +680,7 @@ h3 {
 */
 .pie {
   padding: 32px 28px 60px;
-  background: var(--fondo-claro);
+  background: var(--fondo-general);
   color: var(--texto-suave);
   text-align: center;
   font-size: 0.92rem;
@@ -626,18 +702,9 @@ h3 {
     gap: 14px;
   }
 
-  .portada {
-    min-height: 100vh;
-    padding: 150px 24px 60px;
-  }
-
-  .portada-imagen {
-    height: 72vh;
-  }
-
   .portada-texto-lateral {
     right: 6vw;
-    top: 24%;
+    top: 30%;
     max-width: 300px;
   }
 
@@ -687,21 +754,24 @@ h3 {
     font-size: 0.84rem;
   }
 
-  .portada {
+  .panel-portada {
     min-height: 100vh;
-    padding: 170px 20px 50px;
   }
 
-  .portada-imagen {
-    height: 58vh;
-    left: 50%;
+  .portada-imagen-fondo img {
+    object-position: center center;
+  }
+
+  .portada-marca-visual {
+    top: 24px;
+    left: 24px;
   }
 
   .portada-texto-lateral {
     top: auto;
     right: 22px;
     bottom: 19vh;
-    max-width: 260px;
+    max-width: 270px;
   }
 
   .portada-texto-lateral h1 {
@@ -718,7 +788,7 @@ h3 {
   }
 
   .cinta-nombre {
-    bottom: 27vh;
+    bottom: 28vh;
   }
 
   .cinta-nombre span {
@@ -726,11 +796,17 @@ h3 {
   }
 
   .seccion {
-    padding: 78px 22px;
+    padding: 16px;
   }
 
-  .seccion-presentacion {
-    min-height: 70vh;
+  .panel-seccion {
+    min-height: 0;
+    padding: 78px 22px;
+    border-radius: 30px;
+  }
+
+  .panel-presentacion {
+    min-height: 72vh;
   }
 
   .experiencia-encabezado {
