@@ -8,16 +8,16 @@
   <!-- Título que aparece en la pestaña del navegador -->
   <title>Juan Diego Pérez Bohórquez | Ambiente, datos y software</title>
 
-  <!-- Descripción para buscadores y vista previa al compartir el enlace -->
+  <!-- Descripción para buscadores y vista previa al compartir mi página -->
   <meta name="description" content="Portafolio de Juan Diego Pérez Bohórquez: ciencias ambientales, gestión ambiental, sustancias químicas, datos y programación.">
   <meta name="author" content="Juan Diego Pérez Bohórquez">
 
-  <!-- Información para vista previa cuando comparto mi página -->
+  <!-- Información para cuando comparto el enlace en redes o mensajes -->
   <meta property="og:title" content="Juan Diego Pérez Bohórquez">
   <meta property="og:description" content="Ciencias Ambientales · Gestión ambiental · Datos · Programación">
   <meta property="og:type" content="website">
 
-  <!-- Aquí conecto mi archivo CSS principal -->
+  <!-- Aquí conecto mi archivo de estilos -->
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 
@@ -28,12 +28,12 @@
   </div>
 
   <!-- Barra de navegación flotante superior -->
-  <header class="encabezado">
+  <header class="encabezado en-portada">
     <nav class="barra-navegacion" aria-label="Navegación principal">
-      <!-- Marca personal del sitio -->
+      <!-- Esta es mi marca personal dentro del menú -->
       <a class="marca" href="#inicio" aria-label="Ir al inicio">
-        <span>JDPB</span>
-        <small>Juan Diego</small>
+        <span>JUAN</span>
+        <small>PÉREZ BOHÓRQUEZ</small>
       </a>
 
       <!-- Enlaces principales del portafolio -->
@@ -52,233 +52,266 @@
   </header>
 
   <main>
-    <!-- Portada principal del sitio: esta es la primera pantalla después del precargador -->
+    <!-- 
+      Portada principal.
+      Esta sección funciona como un panel independiente tipo revista.
+      La foto va como imagen de fondo visual y debe cubrir toda la primera pantalla.
+    -->
     <section id="inicio" class="portada">
-      <!-- Fondo decorativo de la portada -->
-      <div class="portada-fondo" aria-hidden="true"></div>
+      <div class="panel-portada">
+        <!-- 
+          Imagen principal de la portada.
+          En CSS haré que esta foto cubra todo el panel.
+        -->
+        <figure class="portada-imagen-fondo" aria-hidden="true">
+          <img src="assets/foto-perfil.jpeg" alt="">
+        </figure>
 
-      <!-- Foto principal de la portada -->
-      <div class="portada-imagen">
-        <img src="assets/foto-perfil.jpeg" alt="Foto de Juan Diego Pérez Bohórquez">
+        <!-- Capa oscura suave para que los textos se lean sobre la foto -->
+        <div class="portada-capa" aria-hidden="true"></div>
+
+        <!-- Nombre pequeño en la esquina superior izquierda de la portada -->
+        <div class="portada-marca-visual" aria-hidden="true">
+          <strong>JDPB</strong>
+          <span>Juan Diego</span>
+        </div>
+
+        <!-- Texto lateral de la portada, como en una composición editorial -->
+        <div class="portada-texto-lateral">
+          <span>Ciencias Ambientales · Datos · Software</span>
+          <h1>Ambiente, datos y desarrollo aplicado</h1>
+        </div>
+
+        <!-- Botón flotante para abrir el CV desde la portada -->
+        <a class="boton-cv-portada" href="assets/CV_Juan_Perez_Bohorquez.pdf" target="_blank" rel="noreferrer">
+          CV
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <!-- Cinta grande con mi nombre atravesando la portada -->
+        <div class="cinta-nombre" aria-hidden="true">
+          <span>Juan Diego Pérez Bohórquez - Juan Diego Pérez Bohórquez - Juan Diego Pérez Bohórquez -</span>
+        </div>
+
+        <!-- Flecha visual para sugerir que el sitio continúa hacia abajo -->
+        <a class="flecha-bajar" href="#sobre-mi" aria-label="Bajar a la sección Sobre mí">
+          ↓
+        </a>
       </div>
-
-      <!-- Texto lateral corto, como en una portada editorial -->
-      <div class="portada-texto-lateral">
-        <span>Perfil técnico ambiental</span>
-        <h1>Ambiente, datos y desarrollo aplicado</h1>
-      </div>
-
-      <!-- Botón principal de la portada -->
-      <a class="boton-cv-portada" href="assets/CV_Juan_Perez_Bohorquez.pdf" target="_blank" rel="noreferrer">
-        CV
-        <span aria-hidden="true">→</span>
-      </a>
-
-      <!-- Cinta grande con mi nombre atravesando la portada -->
-      <div class="cinta-nombre" aria-hidden="true">
-        <span>Juan Diego Pérez Bohórquez - Juan Diego Pérez Bohórquez - Juan Diego Pérez Bohórquez -</span>
-      </div>
-
-      <!-- Flecha visual para sugerir que la página continúa hacia abajo -->
-      <a class="flecha-bajar" href="#sobre-mi" aria-label="Bajar a la sección Sobre mí">
-        ↓
-      </a>
     </section>
 
-    <!-- Sección de presentación: aquí luego el JS hará el efecto de escritura -->
+    <!-- 
+      Panel de presentación.
+      Aquí empieza el contenido después de la portada.
+      El texto queda preparado para que JavaScript lo escriba automáticamente.
+    -->
     <section id="sobre-mi" class="seccion seccion-presentacion">
-      <div class="contenedor contenedor-presentacion">
-        <p class="subtitulo-seccion">Sobre mí</p>
+      <div class="panel-seccion panel-presentacion">
+        <div class="contenedor contenedor-presentacion">
+          <p class="subtitulo-seccion">Sobre mí</p>
 
-        <!-- Este texto queda preparado para animarse con JavaScript cuando aparezca en pantalla -->
-        <p class="texto-escritura" data-escritura="true">
-          Soy estudiante de Ciencias Ambientales en la Universidad de Granada y estudiante de Programación de Software. Mi trayectoria combina formación previa en Química, experiencia en gestión ambiental universitaria y aprendizaje continuo en ciencia de datos.
-        </p>
+          <!-- Este texto se escribirá con JavaScript cuando llegue a esta sección -->
+          <p class="texto-escritura" data-escritura="true">
+            Soy estudiante de Ciencias Ambientales en la Universidad de Granada y estudiante de Programación de Software. Mi trayectoria combina formación previa en Química, experiencia en gestión ambiental universitaria y aprendizaje continuo en ciencia de datos.
+          </p>
 
-        <!-- Este segundo párrafo también podrá escribirse de forma progresiva -->
-        <p class="texto-escritura" data-escritura="true">
-          He trabajado en gestión de residuos peligrosos, sustancias químicas, bases de datos, reportes, automatización con macros y consultas a APIs como PubChem para apoyar procesos de clasificación e identificación química.
-        </p>
+          <!-- Este segundo párrafo también se escribirá de forma progresiva -->
+          <p class="texto-escritura" data-escritura="true">
+            He trabajado en gestión de residuos peligrosos, sustancias químicas, bases de datos, reportes, automatización con macros y consultas a APIs como PubChem para apoyar procesos de clasificación e identificación química.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- Sección de experiencia laboral y técnica -->
+    <!-- Panel de experiencia laboral y técnica -->
     <section id="experiencia" class="seccion">
-      <div class="contenedor">
-        <p class="subtitulo-seccion">Dónde he trabajado</p>
-        <h2>Experiencia</h2>
+      <div class="panel-seccion">
+        <div class="contenedor">
+          <p class="subtitulo-seccion">Dónde he trabajado</p>
+          <h2>Experiencia</h2>
 
-        <!-- Experiencia principal -->
-        <article class="tarjeta-experiencia">
-          <div class="experiencia-encabezado">
-            <div>
-              <h3>Universidad Nacional de Colombia</h3>
-              <p>Oficina de Gestión Ambiental · Apoyo técnico en gestión ambiental</p>
+          <!-- Experiencia principal -->
+          <article class="tarjeta-experiencia">
+            <div class="experiencia-encabezado">
+              <div>
+                <h3>Universidad Nacional de Colombia</h3>
+                <p>Oficina de Gestión Ambiental · Apoyo técnico en gestión ambiental</p>
+              </div>
+              <span>2022 - 2025</span>
             </div>
-            <span>2022 - 2025</span>
-          </div>
 
-          <p>
-            Apoyé procesos relacionados con residuos peligrosos químicos, biológicos,
-            posconsumo y radiactivos. También participé en rutas de recolección, visitas
-            técnicas, segregación, auditorías, trazabilidad, reportes y automatización
-            de información técnica.
-          </p>
-        </article>
+            <p>
+              Apoyé procesos relacionados con residuos peligrosos químicos, biológicos,
+              posconsumo y radiactivos. También participé en rutas de recolección, visitas
+              técnicas, segregación, auditorías, trazabilidad, reportes y automatización
+              de información técnica.
+            </p>
+          </article>
 
-        <!-- Experiencia actual como tutor -->
-        <article class="tarjeta-experiencia">
-          <div class="experiencia-encabezado">
-            <div>
-              <h3>Tutor académico independiente</h3>
-              <p>Acompañamiento académico personalizado</p>
+          <!-- Experiencia actual como tutor -->
+          <article class="tarjeta-experiencia">
+            <div class="experiencia-encabezado">
+              <div>
+                <h3>Tutor académico independiente</h3>
+                <p>Acompañamiento académico personalizado</p>
+              </div>
+              <span>Actualidad</span>
             </div>
-            <span>Actualidad</span>
-          </div>
 
-          <p>
-            Dicto tutorías personalizadas y adapto contenidos complejos a distintos niveles
-            de formación, especialmente en áreas científicas, técnicas y de análisis.
-          </p>
-        </article>
+            <p>
+              Dicto tutorías personalizadas y adapto contenidos complejos a distintos niveles
+              de formación, especialmente en áreas científicas, técnicas y de análisis.
+            </p>
+          </article>
 
-        <!-- Experiencia docente previa -->
-        <article class="tarjeta-experiencia">
-          <div class="experiencia-encabezado">
-            <div>
-              <h3>Colegio René Descartes</h3>
-              <p>Docente</p>
+          <!-- Experiencia docente previa -->
+          <article class="tarjeta-experiencia">
+            <div class="experiencia-encabezado">
+              <div>
+                <h3>Colegio René Descartes</h3>
+                <p>Docente</p>
+              </div>
+              <span>2019 - 2021</span>
             </div>
-            <span>2019 - 2021</span>
-          </div>
 
-          <p>
-            Preparé clases, orienté grupos y diseñé estrategias de enseñanza-aprendizaje
-            para estudiantes.
-          </p>
-        </article>
+            <p>
+              Preparé clases, orienté grupos y diseñé estrategias de enseñanza-aprendizaje
+              para estudiantes.
+            </p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- Sección de proyectos -->
+    <!-- Panel de proyectos -->
     <section id="proyectos" class="seccion seccion-clara">
-      <div class="contenedor">
-        <p class="subtitulo-seccion">Trabajo aplicado</p>
-        <h2>Proyectos</h2>
+      <div class="panel-seccion">
+        <div class="contenedor">
+          <p class="subtitulo-seccion">Trabajo aplicado</p>
+          <h2>Proyectos</h2>
 
-        <div class="rejilla-proyectos">
-          <!-- Proyecto 1 -->
-          <article class="tarjeta-proyecto">
-            <h3>Clasificación de sustancias con PubChem</h3>
-            <p>
-              Herramientas para consultar información química mediante APIs y apoyar la
-              identificación de propiedades relevantes para clasificación ambiental.
-            </p>
-            <span>Python · APIs · PubChem</span>
-          </article>
+          <div class="rejilla-proyectos">
+            <!-- Proyecto 1 -->
+            <article class="tarjeta-proyecto">
+              <h3>Clasificación de sustancias con PubChem</h3>
+              <p>
+                Herramientas para consultar información química mediante APIs y apoyar la
+                identificación de propiedades relevantes para clasificación ambiental.
+              </p>
+              <span>Python · APIs · PubChem</span>
+            </article>
 
-          <!-- Proyecto 2 -->
-          <article class="tarjeta-proyecto">
-            <h3>Automatización de reportes ambientales</h3>
-            <p>
-              Organización, limpieza y sistematización de bases de datos para generar
-              reportes e insumos de seguimiento de residuos peligrosos.
-            </p>
-            <span>Excel · VBA · Bases de datos</span>
-          </article>
+            <!-- Proyecto 2 -->
+            <article class="tarjeta-proyecto">
+              <h3>Automatización de reportes ambientales</h3>
+              <p>
+                Organización, limpieza y sistematización de bases de datos para generar
+                reportes e insumos de seguimiento de residuos peligrosos.
+              </p>
+              <span>Excel · VBA · Bases de datos</span>
+            </article>
 
-          <!-- Proyecto 3 -->
-          <article class="tarjeta-proyecto">
-            <h3>Gestión de residuos peligrosos</h3>
-            <p>
-              Apoyo técnico en rutas, protocolos, segregación, sensibilización, trazabilidad
-              y consolidación de información para gestión institucional.
-            </p>
-            <span>RESPEL · SGA · Auditorías</span>
-          </article>
+            <!-- Proyecto 3 -->
+            <article class="tarjeta-proyecto">
+              <h3>Gestión de residuos peligrosos</h3>
+              <p>
+                Apoyo técnico en rutas, protocolos, segregación, sensibilización, trazabilidad
+                y consolidación de información para gestión institucional.
+              </p>
+              <span>RESPEL · SGA · Auditorías</span>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Sección para publicaciones, documentos o producción técnica -->
+    <!-- Panel para publicaciones, documentos o producción técnica -->
     <section id="publicaciones" class="seccion">
-      <div class="contenedor">
-        <p class="subtitulo-seccion">Producción técnica</p>
-        <h2>Publicaciones</h2>
+      <div class="panel-seccion">
+        <div class="contenedor">
+          <p class="subtitulo-seccion">Producción técnica</p>
+          <h2>Publicaciones</h2>
 
-        <p class="texto-ancho">
-          Esta sección puede reunir documentos técnicos, artículos, informes, cartillas,
-          presentaciones o materiales relacionados con gestión ambiental, sustancias químicas,
-          datos y sostenibilidad.
-        </p>
-      </div>
-    </section>
-
-    <!-- Sección de blog o notas personales/profesionales -->
-    <section id="blog" class="seccion seccion-clara">
-      <div class="contenedor">
-        <p class="subtitulo-seccion">Ideas y aprendizaje</p>
-        <h2>Blog</h2>
-
-        <p class="texto-ancho">
-          Un espacio para escribir sobre ciencias ambientales, residuos peligrosos,
-          automatización, programación, análisis de datos y herramientas digitales aplicadas
-          a problemas ambientales.
-        </p>
-      </div>
-    </section>
-
-    <!-- Sección de formación académica -->
-    <section id="formacion" class="seccion">
-      <div class="contenedor">
-        <p class="subtitulo-seccion">Formación</p>
-        <h2>Base académica</h2>
-
-        <div class="rejilla-formacion">
-          <!-- Formación actual -->
-          <article>
-            <h3>Universidad de Granada</h3>
-            <p>Grado en Ciencias Ambientales · En curso</p>
-          </article>
-
-          <!-- Formación en programación -->
-          <article>
-            <h3>Programación de Software</h3>
-            <p>Formación profesional · En curso</p>
-          </article>
-
-          <!-- Formación previa en química -->
-          <article>
-            <h3>Universidad Nacional de Colombia</h3>
-            <p>Estudios universitarios en Química · Formación parcial</p>
-          </article>
-
-          <!-- Certificación en ciencia de datos -->
-          <article>
-            <h3>IBM / Coursera</h3>
-            <p>Certificación Profesional en Ciencia de Datos · En curso</p>
-          </article>
+          <p class="texto-ancho">
+            Esta sección puede reunir documentos técnicos, artículos, informes, cartillas,
+            presentaciones o materiales relacionados con gestión ambiental, sustancias químicas,
+            datos y sostenibilidad.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Sección final de contacto -->
+    <!-- Panel de blog o notas personales/profesionales -->
+    <section id="blog" class="seccion seccion-clara">
+      <div class="panel-seccion">
+        <div class="contenedor">
+          <p class="subtitulo-seccion">Ideas y aprendizaje</p>
+          <h2>Blog</h2>
+
+          <p class="texto-ancho">
+            Un espacio para escribir sobre ciencias ambientales, residuos peligrosos,
+            automatización, programación, análisis de datos y herramientas digitales aplicadas
+            a problemas ambientales.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panel de formación académica -->
+    <section id="formacion" class="seccion">
+      <div class="panel-seccion">
+        <div class="contenedor">
+          <p class="subtitulo-seccion">Formación</p>
+          <h2>Base académica</h2>
+
+          <div class="rejilla-formacion">
+            <!-- Formación actual -->
+            <article>
+              <h3>Universidad de Granada</h3>
+              <p>Grado en Ciencias Ambientales · En curso</p>
+            </article>
+
+            <!-- Formación en programación -->
+            <article>
+              <h3>Programación de Software</h3>
+              <p>Formación profesional · En curso</p>
+            </article>
+
+            <!-- Formación previa en química -->
+            <article>
+              <h3>Universidad Nacional de Colombia</h3>
+              <p>Estudios universitarios en Química · Formación parcial</p>
+            </article>
+
+            <!-- Certificación en ciencia de datos -->
+            <article>
+              <h3>IBM / Coursera</h3>
+              <p>Certificación Profesional en Ciencia de Datos · En curso</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Panel final de contacto -->
     <section id="contacto" class="seccion seccion-clara contacto">
-      <div class="contenedor">
-        <p class="subtitulo-seccion">Contacto</p>
-        <h2>Conversemos</h2>
+      <div class="panel-seccion">
+        <div class="contenedor">
+          <p class="subtitulo-seccion">Contacto</p>
+          <h2>Conversemos</h2>
 
-        <p class="texto-ancho">
-          Estoy abierto a conversar sobre gestión ambiental, datos, sustancias químicas,
-          automatización y desarrollo de herramientas digitales aplicadas.
-        </p>
+          <p class="texto-ancho">
+            Estoy abierto a conversar sobre gestión ambiental, datos, sustancias químicas,
+            automatización y desarrollo de herramientas digitales aplicadas.
+          </p>
 
-        <!-- Enlaces de contacto principales -->
-        <div class="enlaces-contacto">
-          <a href="mailto:juperezbo@unal.edu.co">juperezbo@unal.edu.co</a>
-          <a href="tel:+34685841481">685 841 481</a>
-          <a href="https://www.linkedin.com/in/juan-diego-perez-bohorquez-ab438b218" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="https://github.com/Zz71198" target="_blank" rel="noreferrer">GitHub</a>
+          <!-- Enlaces de contacto principales -->
+          <div class="enlaces-contacto">
+            <a href="mailto:juperezbo@unal.edu.co">juperezbo@unal.edu.co</a>
+            <a href="tel:+34685841481">685 841 481</a>
+            <a href="https://www.linkedin.com/in/juan-diego-perez-bohorquez-ab438b218" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://github.com/Zz71198" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
         </div>
       </div>
     </section>

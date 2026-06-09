@@ -217,3 +217,31 @@ if (!("IntersectionObserver" in window)) {
     elemento.textContent = textosOriginales[indice];
   });
 }
+
+
+/*
+  Cambio visual de la barra de navegación.
+  Mientras estoy en la portada, la barra es transparente.
+  Cuando bajo a las demás secciones, la barra vuelve a ser una cápsula clara.
+*/
+const encabezado = document.querySelector(".encabezado");
+const portada = document.getElementById("inicio");
+
+if (encabezado && portada && "IntersectionObserver" in window) {
+  const observadorPortada = new IntersectionObserver(
+    (entradas) => {
+      const entrada = entradas[0];
+
+      if (entrada.isIntersecting) {
+        encabezado.classList.add("en-portada");
+      } else {
+        encabezado.classList.remove("en-portada");
+      }
+    },
+    {
+      threshold: 0.35
+    }
+  );
+
+  observadorPortada.observe(portada);
+}

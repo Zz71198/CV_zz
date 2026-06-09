@@ -147,6 +147,60 @@ a:hover {
   gap: 28px;
 }
 
+
+/* 
+  Esta es la transición de la barra.
+  La barra cambia suavemente cuando salgo de la portada.
+*/
+.barra-navegacion {
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    color 0.35s ease;
+}
+
+.marca,
+.marca small,
+.enlaces-nav a {
+  transition: color 0.35s ease, text-shadow 0.35s ease;
+}
+
+/* 
+  Estado de la barra cuando estoy en la portada.
+  Aquí la dejo totalmente transparente para que se funda con la imagen.
+*/
+.encabezado.en-portada .barra-navegacion {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+/* 
+  En portada cambio la marca a blanco para que se lea sobre la foto.
+*/
+.encabezado.en-portada .marca {
+  color: var(--texto-blanco);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.22);
+}
+
+/* 
+  En portada también dejo el texto pequeño de la marca en blanco suave.
+*/
+.encabezado.en-portada .marca small {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* 
+  En portada los enlaces del menú también quedan blancos.
+*/
+.encabezado.en-portada .enlaces-nav a {
+  color: var(--texto-blanco);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.22);
+}
+
+
+
 /* 
   Marca personal del menú.
 */
